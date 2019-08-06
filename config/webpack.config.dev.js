@@ -17,20 +17,16 @@ const config = {
   devtool: 'source-map',
   module: {
     rules: [
+      // {
+      //   test: /\.js$/,
+      //   loader: 'eslint-loader',
+      //   enforce: 'pre',
+      //   exclude: /node_modules/
+      // },
       {
         test: /\.js$/,
-        loader: 'eslint-loader',
-        enforce: 'pre',
-        exclude: /node_modules/
-      },
-
-      {
-        test: /\.js$/,
-        loader: 'babel-loader',
-        exclude: /node_modules/,
-        options: {
-          presets: ['@babel/env']
-        }
+        loader: 'babel-loader'
+        // exclude: /node_modules/
       },
       {
         test: /\.(sa|c|sc)ss$/,
@@ -62,7 +58,6 @@ const config = {
   },
   plugins: [
     new webpack.BannerPlugin('development-版权所有,翻版必究'),
-    new webpack.HotModuleReplacementPlugin(),
     new HtmlWebpackPlugin({
       inject: 'body',
       filename: 'index.html',

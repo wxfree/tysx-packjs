@@ -8,6 +8,9 @@ person.introduce()
 const img2 = new Image()
 img2.src = require('@/image/clone.png')
 document.querySelector('.mleft').append(img2)
+// const img1 = new Image()
+// img1.src = require('http://localhost:8080/static/image/balloon.png')
+// document.querySelector('.mright').append(img1)
 const arr1 = [1, 2, 3, 4, 5]
 const arr2 = [...arr1, 6]
 console.log(arr2)

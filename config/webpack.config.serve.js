@@ -8,7 +8,7 @@ const config = {
   output: {
     filename: libraryName + '.js',
     path: path.resolve(__dirname, '../dist'),
-    publicPath: '/' // 打包生成的index.html文件里面引用资源的前缀，正式环境就就用http://xxx.com+ publicPath,环境不需要设置默认为'/'
+    publicPath: '/' // 打包生成的index.html文件里面引用资源的前缀，正式环境就就用http://xxx.com+ publicPath,测试环境不需要设置默认为'/'
   },
   mode: 'development',
   devServer: {
@@ -16,17 +16,29 @@ const config = {
     port: '3000',
     hot: true,
     inline: true,
-    overlay: true
+    overlay: true,
+    proxy: {
+      'static/*': {
+        target: 'http://localhost:8080/static',
+        secure: false,
+        changeOrigin: true
+      },
+      'api/*': {
+        target: 'http://localhost:8080',
+        secure: false,
+        changeOrigin: true
+      }
+    }
   },
   devtool: 'source-map',
   module: {
     rules: [
-      {
-        test: /\.js$/,
-        loader: 'eslint-loader',
-        enforce: 'pre',
-        exclude: /node_modules/
-      },
+      // {
+      //   test: /\.js$/,
+      //   loader: 'eslint-loader',
+      //   enforce: 'pre',
+      //   exclude: /node_modules/
+      // },
       {
         test: /\.js$/,
         loader: 'babel-loader',
