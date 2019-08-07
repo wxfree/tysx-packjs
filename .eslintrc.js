@@ -7,6 +7,7 @@ module.exports = {
     es6: true
   },
   parserOptions: {
+    ecmaVersion: 2018,
     parser: 'babel-eslint',
     sourceType: 'module' // 支持import导入
   },
@@ -20,8 +21,8 @@ module.exports = {
   rules: {
     'no-console': 'off',
     'vue/no-v-html': 'off',
-    'no-unused-vars': 'error',
-    'no-const-assign': 'error'
+    // 'no-unused-vars': 'error',
+    // 'no-const-assign': 'error'
     // "no-useless-escape":"off"
     // 'no-console': process.env.NODE_ENV === 'production' ? 'error' : 'off',
     // 'no-debugger': process.env.NODE_ENV === 'production' ? 'error' : 'off'

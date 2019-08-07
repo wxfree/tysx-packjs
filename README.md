@@ -7,3 +7,4 @@
   output.publicPath:补全index.html文件里引用资源的前缀;测试环境不需要配置,默认为'/';正式环境可以配置资源路径的域名
   output.publicPath = process.env.NODE_ENV === 'development' ? '/': 'http://cdn.xxx.com'
   devServer.publicPath:同上，如果不设置默认读取output.publicPath
+4. .eslintrc.js parseOptions.ecmaVersion = 2018,6的话不支持对象spread/rest

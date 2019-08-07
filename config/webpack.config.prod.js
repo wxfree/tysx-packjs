@@ -11,12 +11,20 @@ const config = {
   entry: path.resolve(__dirname, '../src/index.js'),
   output: {
     filename: `${libraryName}.[hash:8].js`,
-    path: path.resolve(__dirname, '../dist')
+    path: path.resolve(__dirname, '../dist'),
+    library: libraryName,
+    libraryTarget: 'umd'
   },
   mode: 'production',
   devtool: 'source-map',
   module: {
     rules: [
+      {
+        test: /\.js$/,
+        loader: 'eslint-loader',
+        enforce: 'pre',
+        exclude: /node_modules/
+      },
       {
         test: /\.js$/,
         loader: 'babel-loader'

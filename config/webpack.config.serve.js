@@ -33,12 +33,12 @@ const config = {
   devtool: 'source-map',
   module: {
     rules: [
-      // {
-      //   test: /\.js$/,
-      //   loader: 'eslint-loader',
-      //   enforce: 'pre',
-      //   exclude: /node_modules/
-      // },
+      {
+        test: /\.js$/,
+        loader: 'eslint-loader',
+        enforce: 'pre',
+        exclude: /node_modules/
+      },
       {
         test: /\.js$/,
         loader: 'babel-loader',
