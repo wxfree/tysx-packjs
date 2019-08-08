@@ -15,11 +15,17 @@ obj1.tell()
 import Person from '../js/person'
 const per = new Person('wx', 100)
 per.introduce()
-// import Axios from 'axios'
-// async function getData() {
-//   const resp = await Axios.get('/data/cards.json')
-//   return resp.data
-// }
+import Axios from 'axios'
+import 'babel-polyfill'
+async function getData() {
+  const resp = await Axios.get('/data/cards.json')
+  console.log(123)
+  return resp.data
+}
+getData()
 // getData().then(resp => {
+//   console.log(resp)
+// })
+// Axios.get('/data/cards.json').then(resp => {
 //   console.log(resp)
 // })

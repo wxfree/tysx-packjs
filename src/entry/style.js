@@ -1,2 +1,2 @@
-import './css/global'
-import './css/style.scss'
+import '../css/global'
+import '../css/style.scss'
