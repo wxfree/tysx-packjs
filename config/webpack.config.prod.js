@@ -8,7 +8,7 @@ const UglifyjsWebpackPlugin = require('uglifyjs-webpack-plugin')
 const pkg = require('../package.json')
 const libraryName = pkg.name
 const config = {
-  entry: path.resolve(__dirname, '../src/index.js'),
+  entry: path.resolve(__dirname, '../src/entry/index.js'),
   output: {
     filename: `${libraryName}.[hash:8].js`,
     path: path.resolve(__dirname, '../dist'),
@@ -77,7 +77,7 @@ const config = {
   ],
   resolve: {
     alias: {
-      '@/image': '../src/image'
+      '@': '../src'
     },
     // enforceExtension: false, // import '../xxx.js'必须带上后缀,写了true不加后缀名，死翘翘
     extensions: ['.js', '.css', '.scss', '.json'] // 依次匹配后缀 import '../style'

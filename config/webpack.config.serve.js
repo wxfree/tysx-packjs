@@ -1,10 +1,11 @@
+// webpack-dev-server
 const path = require('path')
 const webpack = require('webpack')
 const HtmlWebpackPlugin = require('html-webpack-plugin')
 const pkg = require('../package.json')
 const libraryName = pkg.name
 const config = {
-  entry: path.resolve(__dirname, '../src/index.js'),
+  entry: path.resolve(__dirname, '../src/entry/index.js'),
   output: {
     filename: libraryName + '.js',
     path: path.resolve(__dirname, '../dist'),
@@ -23,8 +24,8 @@ const config = {
         secure: false,
         changeOrigin: true
       },
-      'api/*': {
-        target: 'http://localhost:8080',
+      'data/*': {
+        target: 'http://localhost:8080/data',
         secure: false,
         changeOrigin: true
       }

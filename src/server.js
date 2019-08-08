@@ -1,7 +1,7 @@
 const express = require('express')
 const app = express()
 const path = require('path')
-app.use('/static', express.static(path.resolve(__dirname, '../src')))
+app.use('/data', express.static(path.resolve(__dirname, '../data')))
 console.log(path.resolve(__dirname, '../static'))
 app.get('/api/card/detail', (req, res) => {
   const resp = {
