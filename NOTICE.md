@@ -17,3 +17,4 @@
     缺点：
     　　base64会增加图片本身的大小，对于小图来说，转码增加的大小导致js加载延时能远远弥补建立http请求的时长。这种取舍是划算的。可是对于大图来说，这样的取舍是不划算的。
   ```
+  8. `npm i typescript ts-loader -D`并`./node_modules/.bin/tsc --init`自动创建`tsconfig.json`;在webpack配置文件中配置`.ts/tsx`的loader

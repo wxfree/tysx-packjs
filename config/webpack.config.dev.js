@@ -53,6 +53,10 @@ const config = {
           name: '[hash].[ext]',
           limit: 8192
         }
+      },
+      {
+        test: /\.ts$/,
+        loader: 'ts-loader'
       }
     ]
   },
